@@ -143,7 +143,8 @@ the fith question is:
 	't' and 'f' values should be values of Domain variable
 	X, Y and Z should be values of Axis variable
 
-	Unfortunelay I'm out of time and I'll compute the average of previous data set for each activity and each subject.
+	Unfortunelay I'm out of time and I'll compute the average of previous data set for each activity and each subject using aggregate function.
+	the final result set contains 180 rows (6 activities * 30 subjects) and 68 variables
 
 
 ### Documentation

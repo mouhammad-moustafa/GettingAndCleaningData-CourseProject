@@ -132,7 +132,7 @@ answer4 <- function(){
 
 answer5 <- function(){
         data <- answer4()
-        res <- aggregate(data, by=list(data$activity_label, data$subject_id), FUN = mean)
+        res <- aggregate(data, by=list(activity_gp=data$activity_label, subject_gp=data$subject_id), FUN = mean)
         res
 }
 
