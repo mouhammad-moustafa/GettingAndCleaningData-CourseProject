@@ -17,6 +17,7 @@ CourseProject
 	features.txt
 	run_analysis.R
 
+	
 functions documentation is detailed at the bottom.	
 	
 The goal fo this project is to prepare tidy data. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. 
@@ -40,7 +41,7 @@ Each person performed **six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNS
 The first question is:
 ###1. Merges the training and the test sets to create one data set. short answer: mergeData function
 
-To answer this question let's have a deeper look at the data:
+1.1 To answer this question let's have a deeper look at the data:
 
  Training data are stored in train folder with following files:
  - 'train/X_train.txt': Training experiment set.
@@ -57,7 +58,7 @@ To answer this question let's have a deeper look at the data:
  -- "X", "y" and "subject" prefix files names.
  -- Different folders "train/test" and different suffix "train/test"
  
- Second step let's read files data into different data frames (R functions are document at the bottom):
+1.2 Second step let's read files data into different data frames (R functions are document at the bottom):
 	Experiment test and training data are read using **readExperimentData** into **expTestData** and **expTrainData** respectively.
 	using dim we have the following results: 
 		dim(expTestData)	dim(expTrainData)
@@ -78,12 +79,12 @@ To answer this question let's have a deeper look at the data:
 		
 	As we can see all test data(activity, experiment and subject) have the same number of rows(2947) as well as for train data(7352)
 
- Third Step is about merging test and training data:
+1.3 Third Step is about merging test and training data:
 	* **mergeActivityData** merges activity training and test data using rbind function and returns a data frame with 10299 rows and 1 column.
 	* **mergeExperimentData** merges experiment training and test data using rbind function and returns a data frame with 10299 rows and 561 column.
 	* **mergeSubjectData** merges subject training and test data using rbind and returns a data frame with 10299 rows and 1 column.
 	
- Finally In the absence of linking Id between activity, experiment and subject data, we assume it must be the implicit order of row numbers, 
+1.4 Finally In the absence of linking Id between activity, experiment and subject data, we assume it must be the implicit order of row numbers, 
  it is basically the only way everything fits together:
 	**mergeData** functions merges experiment, activity and subject data using cbind function applied to merged experiment, activity and subject data. 
 				  this function returns one data set that merges the training and the test sets.
@@ -111,11 +112,10 @@ The second question is:
 	fBodyGyroMag											the feature names are fBodyGyroMag-mean(), fBodyGyroMag-std()
 	fBodyGyroJerkMag										the feature names are fBodyGyroJerkMag-mean(), fBodyGyroJerkMag-std()
 
-	to answer this quaestion according to previous rationale we will extract all features where feature name contains "mean()" or "std()" (66 measurments).
-	**grep** function applied to feature labels returns features index.
-	Assuming column indexes are the same for features and expermient data frame (561 columns), then grep result can be used to subset experiment data.
-	
-	**extractMeanAndStd** function applied to merged data set returns a data frame with 10299 rows and 68 columns.
+ to answer this quaestion according to previous rationale we will extract all features where feature name contains "mean()" or "std()" (66 measurments).
+ **grep** function applied to feature labels returns features index.
+ Assuming column indexes are the same for features and expermient data frame (561 columns), then grep result can be used to subset experiment data.
+ **extractMeanAndStd** function applied to merged data set returns a data frame with 10299 rows and 68 columns.
 
 The third question is:
 ###3. Uses descriptive activity names to name the activities in the data set. short answer: **fillActivityLabel** function
