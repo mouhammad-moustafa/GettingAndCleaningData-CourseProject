@@ -144,7 +144,7 @@ the fith question is:
 	X, Y and Z should be values of Axis variable
 
 	Unfortunelay I'm out of time and I'll compute the average of previous data set for each activity and each subject using aggregate function.
-	the final result set contains 180 rows (6 activities * 30 subjects) and 68 variables
+	the final result set contains 180 rows (6 activities * 30 subjects).
 
 
 ### Documentation
@@ -277,3 +277,20 @@ the fith question is:
  -- Examples
 	readSubjectData(): Reads test subject data.
 	readSubjectData(test = FALSE): Reads training subject data.
+	
+- fillActivityLabel	
+ -- Description
+ Add Activity Label to data set calculated from activity_id and activity_labels data.
+ -- Usage
+ fillActivityLabel(data)
+ -- Arguments
+ data        		data.frame. the data set
+ -- Detail
+ This function reads activity labels stored in "activity_labels.txt" files using readActivityLabels 
+ Then fills activity_label variable using activity_labels and activity_id
+ -- Value
+ the data set with activity_label column while removing activity_id.
+ 
+ -- Examples
+ data <- answer2() 
+ fillActivityLabel(data): activity_label is added to data
