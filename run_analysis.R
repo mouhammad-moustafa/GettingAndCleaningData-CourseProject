@@ -129,3 +129,10 @@ answer4 <- function(){
         data <- setVariableNames(data)
         data
 }
+
+answer5 <- function(){
+        data <- answer4()
+        res <- aggregate(data, by=list(data$activity_label, data$subject_id), FUN = mean)
+        res
+}
+

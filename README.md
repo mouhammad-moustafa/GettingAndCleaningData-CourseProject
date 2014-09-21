@@ -17,8 +17,17 @@ CourseProject
 	features.txt
 	run_analysis.R
 
+each answer function uses the previous answer results and applies the transformation requested in the corresponding question.
+
+- answer1 function returns the data set as requested by question1.
+- answer2 function returns the data set as requested by question2.
+- answer3 function returns the data set as requested by question3.
+- answer4 function returns the data set as requested by question4.
+- answer5 function returns the data set as requested by question5.
 	
-functions documentation is detailed at the bottom.	
+functions documentation is detailed at the bottom.
+
+'BodyBody' in features.txt has been replaced By 'Body'.
 	
 The goal fo this project is to prepare tidy data. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. 
 
@@ -112,7 +121,7 @@ The second question is:
 	fBodyGyroMag											the feature names are fBodyGyroMag-mean(), fBodyGyroMag-std()
 	fBodyGyroJerkMag										the feature names are fBodyGyroJerkMag-mean(), fBodyGyroJerkMag-std()
 
- to answer this quaestion according to previous rationale we will extract all features where feature name contains "mean()" or "std()" (66 measurments).
+ To answer this question according to previous rationale we will extract all features where feature name contains "mean()" or "std()" (66 measurments).
  **grep** function applied to feature labels returns features index.
  Assuming column indexes are the same for features and expermient data frame (561 columns), then grep result can be used to subset experiment data.
  **extractMeanAndStd** function applied to merged data set returns a data frame with 10299 rows and 68 columns.
@@ -126,6 +135,16 @@ The fourth question is:
 ###4. Appropriately labels the data set with descriptive variable names. short answer: **setVariableNames**
 	data set is composed of std and mean variables extracted from features along with "activity_label" and "subject_id".
 	features names can be used after replacing non alphanumeric by '_' using gsub.
+	
+the fith question is:
+###5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+	the data set returned in step 4 suffers from having column headers that contain values (tBody..XYZ)
+	the Acc and Gyro are the first measure
+	't' and 'f' values should be values of Domain variable
+	X, Y and Z should be values of Axis variable
+
+	Unfortunelay I'm out of time and I'll compute the average of previous data set for each activity and each subject.
+
 
 ### Documentation
 		
