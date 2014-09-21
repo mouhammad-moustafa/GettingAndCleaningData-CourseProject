@@ -38,7 +38,7 @@ Each person performed **six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNS
 	* and 30% the **test data**.
 	
 The first question is:
- ##1. Merges the training and the test sets to create one data set. short answer: mergeData function
+###1. Merges the training and the test sets to create one data set. short answer: mergeData function
 
 To answer this question let's have a deeper look at the data:
 
@@ -90,7 +90,7 @@ To answer this question let's have a deeper look at the data:
 
 
 The second question is:
- ##2. Extracts only the measurements on the mean and standard deviation for each measurement. short answer: **extractMeanAndStd** function
+###2. Extracts only the measurements on the mean and standard deviation for each measurement. short answer: **extractMeanAndStd** function
 	Mean and standard deviation are estimated from the following signals:
 	
 	tBodyAcc-XYZ 		(3 different signals X, Y, Z)  		the feature names are tBodyAcc-mean()-X(Y, Z), tBodyAcc-std()-X(Y, Z)
@@ -118,12 +118,12 @@ The second question is:
 	**extractMeanAndStd** function applied to merged data set returns a data frame with 10299 rows and 68 columns.
 
 The third question is:
- ##3. Uses descriptive activity names to name the activities in the data set. short answer: **fillActivityLabel** function
+###3. Uses descriptive activity names to name the activities in the data set. short answer: **fillActivityLabel** function
 	Activity labels can be read from activity_labels.txt file using readActivityLabels functions. Then **fillActivityLabel** adds new column "activity_label"
 	to data set then removes "activity_id".
 	
 The fourth question is:
-##4. Appropriately labels the data set with descriptive variable names. short answer: **setVariableNames**
+###4. Appropriately labels the data set with descriptive variable names. short answer: **setVariableNames**
 	data set is composed of std and mean variables extracted from features along with "activity_label" and "subject_id".
 	features names can be used after replacing non alphanumeric by '_' using gsub.
 
