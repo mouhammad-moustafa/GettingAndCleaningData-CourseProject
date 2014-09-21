@@ -8,73 +8,109 @@ activity_label
 subject_id
 	Subject Id: Identifies the subject id who performed the activity for each window sample. 
 				Its range is from 1 to 30.
+
+the following variables values are the Average for each activity and each subject
 				
 tBodyAcc_mean___X
+	Mean of time domain body Accelaration for X axis
 
 tBodyAcc_mean___Y
+	Mean of time domain body Accelaration for Y axis
 
 tBodyAcc_mean___Z
+	Mean of time domain body Accelaration for Z axis
 
 tGravityAcc_mean___X
+	Mean of time domain Gravity Accelaration for X axis
 
 tGravityAcc_mean___Y
+	Mean of time domain Gravity Accelaration for Y axis
 
 tGravityAcc_mean___Z
+	Mean of time domain Gravity Accelaration for Z axis
 
-tBodyAccJerk_mean___X       
+tBodyAccJerk_mean___X 
+	Mean of time domain Body Accelaration Jerk for X axis
 
 tBodyAccJerk_mean___Y
+	Mean of time domain Body Accelaration Jerk for Y axis
       
 tBodyAccJerk_mean___Z
+	Mean of time domain Body Accelaration Jerk for Z axis
 
 tBodyGyro_mean___X
+	Mean of time domain Body Angular velocity for X axis
 
 tBodyGyro_mean___Y
+	Mean of time domain Body Angular velocity for Y axis
 
 tBodyGyro_mean___Z
+	Mean of time domain Body Angular velocity for Z axis
 
 tBodyGyroJerk_mean___X
+	Mean of time domain Body Angular velocity Jerk for X axis
 
 tBodyGyroJerk_mean___Y
+	Mean of time domain Body Angular velocity Jerk for Y axis
 
 tBodyGyroJerk_mean___Z
-
+	Mean of time domain Body Angular velocity Jerk for Z axis
+	
 tBodyAccMag_mean__
+	Mean of time domain Body Acceleration magnitude
 
 tGravityAccMag_mean__
+	Mean of time domain Gravity Acceleration magnitude
 
 tBodyAccJerkMag_mean__
+	Mean of time domain Body Acceleration Jerk magnitude
 
 tBodyGyroMag_mean__
+	Mean of time domain Body Angular velocity magnitude
 
 tBodyGyroJerkMag_mean__
+	Mean of time domain Body Angular velocity Jerk magnitude
 
 fBodyAcc_mean___X
+	Mean of frequency domain Body Acceleration for X axis
 
 fBodyAcc_mean___Y
+	Mean of frequency domain Body Acceleration for Y axis
 
 fBodyAcc_mean___Z
+	Mean of frequency domain Body Acceleration for Z axis
 
 fBodyAccJerk_mean___X
+	Mean of frequency domain Body Acceleration Jerk for X axis
 
 fBodyAccJerk_mean___Y
-
+	Mean of frequency domain Body Acceleration Jerk for Y axis
+	
 fBodyAccJerk_mean___Z
+	Mean of frequency domain Body Acceleration for Z axis
 
 fBodyGyro_mean___X
+	Mean of frequency domain Body Angular velocity for X axis
 
 fBodyGyro_mean___Y
+	Mean of frequency domain Body Angular velocity for Y axis
 
 fBodyGyro_mean___Z
+	Mean of frequency domain Body Angular velocity for Z axis
 
 fBodyAccMag_mean__
+	Mean of frequency domain Body Acceleration Magnitude
 
-fBodyBodyAccJerkMag_mean__
+fBodyAccJerkMag_mean__
+	Mean of frequency domain Body Acceleration Jerk Magnitude
 
-fBodyBodyGyroMag_mean__
+fBodyGyroMag_mean__
+	Mean of frequency domain Body Angular velocity Magnitude
 
-fBodyBodyGyroJerkMag_mean__
+fBodyGyroJerkMag_mean__
+	Mean of frequency domain Body Angular velocity Jerk Magnitude
 
+The following variables are Standard Deviation instead of Mean of the same previous variables
 tBodyAcc_std___X
 
 tBodyAcc_std___Y
@@ -135,11 +171,11 @@ fBodyGyro_std___Z
 
 fBodyAccMag_std__
 
-fBodyBodyAccJerkMag_std__
+fBodyAccJerkMag_std__
 
-fBodyBodyGyroMag_std__
+fBodyGyroMag_std__
 
-fBodyBodyGyroJerkMag_std__
+fBodyGyroJerkMag_std__
     
 		
 		

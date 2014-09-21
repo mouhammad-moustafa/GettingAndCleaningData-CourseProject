@@ -140,8 +140,8 @@ the fith question is:
 ###5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 	the data set returned in step 4 suffers from having column headers that contain values (tBody..XYZ)
 	the Acc and Gyro are the first measure
-	't' and 'f' values should be values of Domain variable
-	X, Y and Z should be values of Axis variable
+	't' and 'f' values could be values of Domain variable
+	X, Y and Z could be values of Axis variable
 
 	Unfortunelay I'm out of time and I'll compute the average of previous data set for each activity and each subject using aggregate function.
 	the final result set contains 180 rows (6 activities * 30 subjects).
