@@ -1,5 +1,9 @@
 GettingAndCleaningData-CourseProject Code Book
 ====================================
+##data set is composed of std and mean variables extracted from features along with "activitylabel" and "subjectid".  
+	###Names of variables should be:  
+	- Not have underscores or dots or white spaces
+	- All Lower case when possible
 
 **activitylabel**  
 	Activity Label: six different activities:
