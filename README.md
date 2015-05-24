@@ -26,8 +26,6 @@ each answer function uses the previous answer results and applies the transforma
 - answer5 function returns the data set as requested by question5.
 	
 functions documentation is detailed at the bottom.
-
-'BodyBody' in features.txt has been replaced By 'Body'.
 	
 The goal fo this project is to prepare tidy data. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. 
 
@@ -68,31 +66,27 @@ The first question is:
  -- Different folders "train/test" and different suffix "train/test"
  
 1.2 Second step let's read files data into different data frames (R functions are document at the bottom):
-	Experiment test and training data are read using **readExperimentData** into **expTestData** and **expTrainData** respectively.
+	Experiment test and training data are read and merged using **mergeExperimentData** into **expData**.
 	using dim we have the following results: 
-		dim(expTestData)	dim(expTrainData)
-		2947  	561			7352  	561
+		dim(expData)
+		10299  	561
 	So we can deduce that experiment columns corresponds to the 561 features. 
-	**readExperimentData** funtion reads experiment data into a data frame.
+	**mergeExperimentData** funtion merges experiment data into a data frame.
 
-	In addition activity test and training data are read into **activityTestData** and **activityTrainData** respectively:
-	**readActivityData** function reads activity data into a data frame with a single column "activity_id" 
+	In addition activity test and training data are read and merged into **activityData**:
+	**mergeActivityData** function reads activity data into a data frame with a single column "activity_id" 
 	using dim we have the following results:
-		dim(activityTestData)	dim(activityTrainData)
-		2947  		1		    7352  		1
+		dim(activityData)
+		10299  		1	
 		
-	Finally subject test and training data are read into **subjectTestData** and **subjectTrainData**
-	**readSubjectData** function reads activity data into a data frame with a single column "activity_id" 
-		dim(subjectTestData)	dim(subjectTrainData)
-		2947  		1		    7352  		1
+	Finally subject test and training data are read and merged into **subjectData**
+	**mergeSubjectData** function reads and merges activity data into a data frame with a single column "activity_id" 
+		dim(subjectData)
+		10299  		1
 		
-	As we can see all test data(activity, experiment and subject) have the same number of rows(2947) as well as for train data(7352)
+	As we can see all data(activity, experiment and subject) have the same number of rows(10299)
 
-1.3 Third Step is about merging test and training data:
-	* **mergeActivityData** merges activity training and test data using rbind function and returns a data frame with 10299 rows and 1 column.
-	* **mergeExperimentData** merges experiment training and test data using rbind function and returns a data frame with 10299 rows and 561 column.
-	* **mergeSubjectData** merges subject training and test data using rbind and returns a data frame with 10299 rows and 1 column.
-	
+
 1.4 Finally In the absence of linking Id between activity, experiment and subject data, we assume it must be the implicit order of row numbers, 
  it is basically the only way everything fits together:
 	**mergeData** functions merges experiment, activity and subject data using cbind function applied to merged experiment, activity and subject data. 
@@ -127,170 +121,24 @@ The second question is:
  **extractMeanAndStd** function applied to merged data set returns a data frame with 10299 rows and 68 columns.
 
 The third question is:
-###3. Uses descriptive activity names to name the activities in the data set. short answer: **fillActivityLabel** function
-	Activity labels can be read from activity_labels.txt file using readActivityLabels functions. Then **fillActivityLabel** adds new column "activity_label"
+###3. Uses descriptive activity names to name the activities in the data set. short answer: **answer3** function
+	Activity labels can be read from activity_labels.txt file using readActivityLabels functions. Then add new column "activity_label"
 	to data set then removes "activity_id".
 	
 The fourth question is:
-###4. Appropriately labels the data set with descriptive variable names. short answer: **setVariableNames**
-	data set is composed of std and mean variables extracted from features along with "activity_label" and "subject_id".
-	features names can be used after replacing non alphanumeric by '_' using gsub.
+###4. Appropriately labels the data set with descriptive variable names. short answer: **answer4**
+	data set is composed of std and mean variables extracted from features along with "activitylabel" and "subjectid".
+	Names of variables should be:
+	All Lower case when possible
+	Not have underscores or dots or white spaces
+	features names can be used after replacing removing alphanumeric using gsub.
 	
 the fith question is:
 ###5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-	the data set returned in step 4 suffers from having column headers that contain values (tBody..XYZ)
 	the Acc and Gyro are the first measure
 	't' and 'f' values could be values of Domain variable
 	X, Y and Z could be values of Axis variable
 
-	Unfortunelay I'm out of time and I'll compute the average of previous data set for each activity and each subject using aggregate function.
+	Compute the average of each variable for each activity and each subject using group_by and summarize_each from dplyr library.
 	the final result set contains 180 rows (6 activities * 30 subjects).
 
-
-### Documentation
-		
- - readActivityData:
- -- Description
-	Reads Activity data stored in "y" file in table format and creates a data frame from it, with activities corresponding to lines and a single column "activity_id" 
- -- Usage
-	readActivityData(test = TRUE)
- -- Arguments
-	test			logical. if TRUE then "test" activity data will be read and returned as data frame.
-							 else "training" activity data will be read and returned as data frame.
- -- Detail
-    This function reads activity data stored in "y" files using read.table() with the following paramater:
-		* file=dataPath("y", test): builds file path according to "test" argument:
-		* stringsAsFactors = FALSE
-		* col.names = "activity_id"
- -- Value
-	A single column "activity_id" data frame containing activity data.
-	
- -- Examples
-	readActivityData(): Reads test activity data.
-	readActivityData(test = FALSE): Reads training activity data.
-	
- - readExperimentData:
- -- Description
-	Reads Experiments data stored in "X" file in table format and creates a data frame from it, with experiments corresponding to lines and 561 columns representing the features.
- 
- -- Usage
-	readExperimentData(test = TRUE)
- 
- -- Arguments
-	test			logical. if TRUE then "test" experiment data will be read and returned as data frame.
-							 else "training" experiment data will be read and returned as data frame.
- -- Detail
-    This function reads experiment data stored in "X" files using read.table() with the following paramater:
-		* file=dataPath("X", test): builds file path according to "test" argument:
-		* stringsAsFactors = FALSE
- -- Value
-	A data frame containing Experiment data as rows and 561 columns.
-	
- -- Examples
-	readExperimentData(): Reads test Experiment data.
-	readExperimentData(test = FALSE): Reads training Experiment data.
-
-- dataPath:
- -- Description:
-	builds file path according to test argument.
-	
- -- Usage
-	dataPath(fileName, test).
-	
- -- Arguments
-    fileName: character.The file name prefix(ex: "X", "y", "subject").
-    test: logical. if TRUE then file path is built from test folder with "_test" as suffix. "./test/" + fileName + "_test.txt"
-					else file path is built from training folder with "_train" as suffix. "./train/" + fileName + "_train.txt"
-					
- -- Value
-	The file path.
-	
- -- Examples
-	dataPath("y", test = TRUE): builds the test activity data file path: "./test/y_test.txt"
-	dataPath("X", test = FALSE): builds the training data set file path as: "./train/X_train.txt"
-	
- 	
-	
- - readActivityLabels:
- -- Description
-	Reads activity ids and Labels as dataframe with two columns "activity_id" and "activity_label" from 
- 
- -- Usage
-	readActivityLabels()
- 
- -- Detail
-    This function reads from activity_labels.txt file using read.table() with the following paramater:
-		* file="activity_labels.txt":
-		* stringsAsFactors = FALSE
-		* col.names = col.names = c("activity_id", "activity_label")
- -- Value
-	A data frame with two columns:
-	   activity_id     activity_label
-           1            WALKING
-           2   			WALKING_UPSTAIRS
-           3 			WALKING_DOWNSTAIRS
-           4            SITTING
-           5           	STANDING
-           6            LAYING
-
-- readFeatures:
- -- Description
-	Reads features ids and Labels as dataframe with two columns "feature_id" and "feature_label" from features.txt file.
- 
- -- Usage
-	readFeatures()
- 
- -- Detail
-    This function reads from features.txt file using read.table() with the following paramater:
-		* file="features.txt":
-		* stringsAsFactors = FALSE
-		* col.names = col.names = c("feature_id", "feature_label")
- -- Value
-	A data frame with two columns "feature_id" and feature_label
-           
- -- Examples:
-	features <- readFeatures()
-	head(features, 5)
-		feature_id     	feature_label
-	1          1 	  tBodyAcc-mean()-X
-	2          2 	  tBodyAcc-mean()-Y
-	3          3      tBodyAcc-mean()-Z
-	4          4      tBodyAcc-std()-X
-	5          5      tBodyAcc-std()-Y
-	
-- readSubjectData:
- -- Description
-	Reads Subject data stored in "subject" file in table format and creates a data frame from it, with a single column "subject_id" 
- -- Usage
-	readSubjectData(test = TRUE)
- -- Arguments
-	test			logical. if TRUE then subject "test" data will be read and returned as data frame.
-							 else subject "training" data will be read and returned as data frame.
- -- Detail
-    This function reads subject data stored in "subject" files using read.table() with the following paramater:
-		* file=dataPath("subject", test): builds file path according to "test" argument:
-		* stringsAsFactors = FALSE
-		* col.names = "subject_id"
- -- Value
-	A single column "subject_id" data frame containing subject data. Its range is from 1 to 30.
-	
- -- Examples
-	readSubjectData(): Reads test subject data.
-	readSubjectData(test = FALSE): Reads training subject data.
-	
-- fillActivityLabel	
- -- Description
- Add Activity Label to data set calculated from activity_id and activity_labels data.
- -- Usage
- fillActivityLabel(data)
- -- Arguments
- data        		data.frame. the data set
- -- Detail
- This function reads activity labels stored in "activity_labels.txt" files using readActivityLabels 
- Then fills activity_label variable using activity_labels and activity_id
- -- Value
- the data set with activity_label column while removing activity_id.
- 
- -- Examples
- data <- answer2() 
- fillActivityLabel(data): activity_label is added to data

@@ -1,181 +1,212 @@
 GettingAndCleaningData-CourseProject Code Book
 ====================================
 
-activity_label
+activitylabel
 	Activity Label: six different activities:
 		WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 		
-subject_id
+subjectid
 	Subject Id: Identifies the subject id who performed the activity for each window sample. 
 				Its range is from 1 to 30.
 
 the following variables values are the Average for each activity and each subject
 				
-tBodyAcc_mean___X
+tbodyaccmeanx
 	Mean of time domain body Accelaration for X axis
 
-tBodyAcc_mean___Y
+tbodyaccmeany
 	Mean of time domain body Accelaration for Y axis
 
-tBodyAcc_mean___Z
+tbodyaccmeanz
 	Mean of time domain body Accelaration for Z axis
 
-tGravityAcc_mean___X
+tgravityaccmeanx
 	Mean of time domain Gravity Accelaration for X axis
 
-tGravityAcc_mean___Y
+tgravityaccmeany
 	Mean of time domain Gravity Accelaration for Y axis
 
-tGravityAcc_mean___Z
+tgravityaccmeanz
 	Mean of time domain Gravity Accelaration for Z axis
 
-tBodyAccJerk_mean___X 
+tbodyaccjerkmeanx 
 	Mean of time domain Body Accelaration Jerk for X axis
 
-tBodyAccJerk_mean___Y
+tbodyaccjerkmeany
 	Mean of time domain Body Accelaration Jerk for Y axis
       
-tBodyAccJerk_mean___Z
+tbodyaccjerkmeanz
 	Mean of time domain Body Accelaration Jerk for Z axis
 
-tBodyGyro_mean___X
+tbodygyromeanx
 	Mean of time domain Body Angular velocity for X axis
 
-tBodyGyro_mean___Y
+tbodygyromeany
 	Mean of time domain Body Angular velocity for Y axis
 
-tBodyGyro_mean___Z
+tbodygyromeanz
 	Mean of time domain Body Angular velocity for Z axis
 
-tBodyGyroJerk_mean___X
+tbodygyrojerkmeanx
 	Mean of time domain Body Angular velocity Jerk for X axis
 
-tBodyGyroJerk_mean___Y
+tbodygyrojerkmeany
 	Mean of time domain Body Angular velocity Jerk for Y axis
 
-tBodyGyroJerk_mean___Z
+tbodygyrojerkmeanz
 	Mean of time domain Body Angular velocity Jerk for Z axis
 	
-tBodyAccMag_mean__
+tbodyaccmagmean
 	Mean of time domain Body Acceleration magnitude
 
-tGravityAccMag_mean__
+tgravityaccmagmean
 	Mean of time domain Gravity Acceleration magnitude
 
-tBodyAccJerkMag_mean__
+tbodyaccjerkmagmean
 	Mean of time domain Body Acceleration Jerk magnitude
 
-tBodyGyroMag_mean__
+tbodygyromagmean
 	Mean of time domain Body Angular velocity magnitude
 
-tBodyGyroJerkMag_mean__
+tbodygyrojerkmagmean
 	Mean of time domain Body Angular velocity Jerk magnitude
 
-fBodyAcc_mean___X
+fbodyaccmeanx
 	Mean of frequency domain Body Acceleration for X axis
 
-fBodyAcc_mean___Y
+fbodyaccmeany
 	Mean of frequency domain Body Acceleration for Y axis
 
-fBodyAcc_mean___Z
+fbodyaccmeanz
 	Mean of frequency domain Body Acceleration for Z axis
 
-fBodyAccJerk_mean___X
+fbodyaccjerkmeanx
 	Mean of frequency domain Body Acceleration Jerk for X axis
 
-fBodyAccJerk_mean___Y
+fbodyaccjerkmeany
 	Mean of frequency domain Body Acceleration Jerk for Y axis
 	
-fBodyAccJerk_mean___Z
+fbodyaccjerkmeanz
 	Mean of frequency domain Body Acceleration for Z axis
 
-fBodyGyro_mean___X
+fbodygyromeanx
 	Mean of frequency domain Body Angular velocity for X axis
 
-fBodyGyro_mean___Y
+fbodygyromeany
 	Mean of frequency domain Body Angular velocity for Y axis
 
-fBodyGyro_mean___Z
+fbodygyromeanz
 	Mean of frequency domain Body Angular velocity for Z axis
 
-fBodyAccMag_mean__
+fbodyaccmagmean
 	Mean of frequency domain Body Acceleration Magnitude
 
-fBodyAccJerkMag_mean__
+fbodybodyaccjerkmagmean
 	Mean of frequency domain Body Acceleration Jerk Magnitude
 
-fBodyGyroMag_mean__
+fbodybodygyromagmean
 	Mean of frequency domain Body Angular velocity Magnitude
 
-fBodyGyroJerkMag_mean__
+fbodybodygyrojerkmagmean
 	Mean of frequency domain Body Angular velocity Jerk Magnitude
 
-The following variables are Standard Deviation instead of Mean of the same previous variables
-tBodyAcc_std___X
+tbodyaccstdx
+	Standard Deviation of time domain body Accelaration for X axis
+	
+tbodyaccstdy
+	Standard Deviation of time domain body Accelaration for Y axis
+	
+tbodyaccstdz
+	Standard Deviation of time domain body Accelaration for Z axis
 
-tBodyAcc_std___Y
+tgravityaccstdx
+	Standard Deviation of time domain Gravity Accelaration for X axis
+	
+tgravityaccstdy
+	Standard Deviation of time domain Gravity Accelaration for Y axis
+	
+tgravityaccstdz
+	Standard Deviation of time domain Gravity Accelaration for Z axis
+	
+tbodyaccjerkstdx
+	Standard Deviation of time domain Body Accelaration Jerk for X axis
 
-tBodyAcc_std___Z
+tbodyaccjerkstdy
+	Standard Deviation of time domain Body Accelaration Jerk for Y axis
+	
+tbodyaccjerkstdz
+	Standard Deviation of time domain Body Accelaration Jerk for Z axis
+	
+tbodygyrostdx
+	Standard Deviation of time domain Body Angular velocity for X axis
+	
+tbodygyrostdy
+	Standard Deviation of time domain Body Angular velocity for Y axis
 
-tGravityAcc_std___X
+tbodygyrostdz
+	Standard Deviation of time domain Body Angular velocity for Z axis
+	
+tbodygyrojerkstdx
+	Standard Deviation of time domain Body Angular velocity Jerk for X axis
+	
+tbodygyrojerkstdy
+	Standard Deviation of time domain Body Angular velocity Jerk for Y axis
 
-tGravityAcc_std___Y
+tbodygyrojerkstdz
+	Standard Deviation of time domain Body Angular velocity Jerk for Z axis
+	
+tbodyaccmagstd
+	Standard Deviation of time domain Body Acceleration magnitude
 
-tGravityAcc_std___Z
+tgravityaccmagstd
+	Standard Deviation of time domain Gravity Acceleration magnitude
+	
+tbodyaccjerkmagstd
+	Standard Deviation of time domain Body Acceleration Jerk magnitude
+	
+tbodygyromagstd
+	Standard Deviation of time domain Body Angular velocity magnitude
+	
+tbodygyrojerkmagstd
+	Standard Deviation of time domain Body Angular velocity Jerk magnitude
+	
+fbodyaccstdx
+	Standard Deviation of frequency domain Body Acceleration for X axis
+	
+fbodyaccstdy
+	Standard Deviation of frequency domain Body Acceleration for Y axis
 
-tBodyAccJerk_std___X
+fbodyaccstdz
+	Standard Deviation of frequency domain Body Acceleration for Z axis
+	
+fbodyaccjerkstdx
+	Standard Deviation of frequency domain Body Acceleration Jerk for X axis
 
-tBodyAccJerk_std___Y
+fbodyaccjerkstdy
+	Standard Deviation of frequency domain Body Acceleration Jerk for Y axis
+	
+fbodyaccjerkstdz
+	Standard Deviation of frequency domain Body Acceleration Jerk for Z axis	
+	
+fbodygyrostdx
+	Standard Deviation of frequency domain Body Angular velocity for X axis
+	
+fbodygyrostdy
+	Standard Deviation of frequency domain Body Angular velocity for Y axis
 
-tBodyAccJerk_std___Z
-
-tBodyGyro_std___X
-
-tBodyGyro_std___Y
-
-tBodyGyro_std___Z
-
-tBodyGyroJerk_std___X
-
-tBodyGyroJerk_std___Y
-
-tBodyGyroJerk_std___Z
-
-tBodyAccMag_std__
-
-tGravityAccMag_std__
-
-tBodyAccJerkMag_std__
-
-tBodyGyroMag_std__
-
-tBodyGyroJerkMag_std__
-
-fBodyAcc_std___X
-
-fBodyAcc_std___Y
-
-fBodyAcc_std___Z
-
-fBodyAccJerk_std___X
-
-fBodyAccJerk_std___Y
-
-fBodyAccJerk_std___Z
-
-fBodyGyro_std___X
-
-fBodyGyro_std___Y
-
-fBodyGyro_std___Z
-
-fBodyAccMag_std__
-
-fBodyAccJerkMag_std__
-
-fBodyGyroMag_std__
-
-fBodyGyroJerkMag_std__
-    
+fbodygyrostdz
+	Standard Deviation of frequency domain Body Angular velocity for Z axis
+	
+fbodyaccmagstd
+	Standard Deviation of frequency domain Body Acceleration Magnitude
+	
+fbodybodyaccjerkmagstd
+	Standard Deviation of frequency domain Body Acceleration Jerk Magnitude
+	
+fbodybodygyromagstd
+	Standard Deviation of frequency domain Body Angular velocity Magnitude
+	
+fbodybodygyrojerkmagstd	
+	Standard Deviation of frequency domain Body Angular velocity Jerk Magnitude    
 		
 		
